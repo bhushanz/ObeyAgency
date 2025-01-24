@@ -8,19 +8,31 @@ html,body{
     height: 100%;
     width: 100%;
     font-family:Plain ;
-    color: white;
+    overflow-x: hidden;
+    cursor: none;
+    
 }
 main{
-    background-color:black;
+    background-color: #151515;
+    color: white;
+    
+ 
 }
 #loader{
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     position:fixed;
+    z-index: 999;
     background-color:#0B0B0B;
     padding: 15vh 7vw;
+    box-sizing: border-box;
+    overflow: hidden;
+   
  
-    
+}
+
+body.no-scroll {
+    overflow: hidden; /* Disable scrolling */
 }
 .line{
     height: fit-content;
@@ -44,8 +56,7 @@ main{
 
 }
 
-
-.line >h1{
+.line h1{
     font-size: 7vw;
     text-transform: uppercase;
     font-weight:400;
@@ -87,9 +98,98 @@ main{
       opacity: 1;
     }
   }
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 7.7vh 1.5vw;
+
+    z-index:1;
+}
+.navbar-part1{
+    width: 72%;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-part1 .navbar-nav2{
+     display: flex;
+     gap: 2.5vw;
+     padding-right: 1vw;
+   
+   
+}
+.navbar-nav2 .frame  h4{
+    font-weight: 400;
+    
+}
+.navbar-nav1{
+    display: flex;
+    flex-direction: column;
+
+}
+.nav-part{
+    padding: 1vw 1vw;
+    display: flex;
+    gap: 1.5vw;
+   height: fit-content;
+ 
+}
+.nav-part i{
+    margin-top:.5vh;
+    font-size:1.6vw;
+}
+
+.frame{
+  
+    display: inline-block;
+    height:fit-content;
+    padding:1vw 1vw;
+}
+
+.circle{
+   
+pointer-events: none;
+
+    height:2.4vw;
+    width: 2.4vw;
+    border-radius: 50%;
+    border:1px solid rgb(209, 209, 209);
+    position: absolute;
+    z-index: 5;
+    top: -10px;
+    left: -10px;
+    transform: translate(-50%, -50%);
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .5s;
+
+}
 
 #page1{
     height: 100vh;
     width: 100%;
     background-color: #151515;
+    
+
+}
+.hero{
+    width: 75%;
+  float: right;
+  display: flex;
+}
+.hero h1,h2{
+    font-size:5.5vw;
+   height: fit-content;
+text-transform: uppercase;
+
+}
+.hero h2:hover {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    font-weight: 400;
+}
+#page2{
+    height: 100vh;
+    width: 100%;
+    background-color: #b18888;
+    border: 2px solid red;
+  
 }
