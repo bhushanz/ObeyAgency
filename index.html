@@ -4,33 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ObeyAgency</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="loader">
+        <div class="line">
+            <div id="line-part1">
+                 <h5>00</h5>
+                 <h6>- 100</h6>
+            </div>
+            <h1>Your</h1>
+        </div>
+        <div class="line">
+            <h1>Web Experience</h1>
+        </div>
+        <div class="line">
+            <h1> is loading right</h1>
+            <h2>Know</h2>
+        </div>
+
+    </div>
    
     <div class="circle"></div>
     <main>
-        <div id="loader">
-            <div class="line">
-                <div id="line-part1">
-                     <h5>00</h5>
-                     <h6>- 100</h6>
-                </div>
-                <h1>Your</h1>
-            </div>
-            <div class="line">
-                <h1>Web Experience</h1>
-            </div>
-            <div class="line">
-                <h1> is loading right</h1>
-                <h2>Know</h2>
-            </div>
-    
-        </div>
-
-      
-        <div id="page1"> 
+        <div data-scroll data-scroll-speed="1" id="page1"> 
 
             <div class="navbar">
                <div class="nav-part">
@@ -93,16 +92,158 @@
 
         </div>
 
-        <div id="page2">
+        <div  id="page2" data-scroll data-scroll-speed="2" >
+         
+             <div class="videoContainer">
+                <div class="videoPlay"><i class="fa-solid fa-play"></i></div>
+                <img src="https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg" alt="">
+               <video  loop  src="https://obys.agency/wp-content/uploads/2024/12/Obys-Showreel-2024.mp4"></video>
+             </div>
+        </div>
+        <div  id="page4" data-scroll data-scroll-speed="1">
+            <div id="page4-content">
+                <h1>about obys</h1>
+                <div class="underline"></div>
+                <P>Our
+                    agency
+                    is
+                    about
+                    people
+                    who
+                     
+                    love
+                    creating,
+                    designing
+                    and
+                     
+                    developing
+                    wow
+                    projects.
+                    In
+                    the
+                     
+                    same
+                    time
+                    we
+                    are
+                    a
+                    boutique
+                     
+                    agency
+                    that
+                    is
+                    more
+                    than
+                    the
+                     
+                    collective.
+                    We
+                    learn
+                    and
+                    grow,
+                    win
+                     
+                    and
+                    celebrate
+                    together.</P>
+                    <div id="page4-flex">
+                        <img src="https://obys.agency/wp-content/uploads/2020/07/content-image01.jpg" alt="">
+                        <p>We are happy to present our new website and updated version of Obys agency. As before we are open for new projects worldwide! <br>
+                            <br>
 
+                            Would you like to have award winning site or unique branding style, please say hi to our manager —info@obys.agency.
+                            And we will help you with the pleasure.</p>
+                    </div>
+
+                    <div id="page4-blue-div">
+                        <div class="blue-div-elem">
+                            <h4>Awwwards x16</h4>
+                            <p>SOTM, SOTD and Honrable Mentions</p>
+                        </div>
+                        <div class="blue-div-elem">
+                            <h4>FWA x11</h4>
+                            <p>FWA of The Day</p>
+                        </div>
+                        <div class="blue-div-elem">
+                            <h4>CSSDA x23</h4>
+                            <p>WOTM, WOTD and UI, UX, Innovation</p>
+                        </div>
+                        <div class="blue-div-elem">
+                            <h4>Behance x25</h4>
+                            <p>Interaction, Graphic Design</p>
+                        </div>
+                        <div class="blue-div-elem">
+                            <h4>The Very Best Of x7</h4>
+                            <p>The Very Best Of, Best Of</p>
+                        </div>
+                    </div>
+                    <div class="underline"></div>
+                    <h4>We work with</h4>
+                    <div>
+                    </div>
+
+            </div>
         </div>
 
-        <div id="page3">
+        <div id="page5" >
+            <div class="elem">
+                <h1><span>Fasion</span> - sport - Technology -</h1>
+                <h1>Science - <span>partners</span> - Travel -</h1>
+              
+            </div>
+            <div class="elem2">
+                <h1><span>Sport</span> - Fasion - Technology -</h1>
+                <h1>Science - <span>partners</span> - Travel -</h1>     
+            </div>
+            <div class="elem">
+                <h1>Sport - Fasion - <span>Technology</span> -</h1>
+                <h1>partners - <span>science</span> - Travel -</h1>
+            </div>
+            <div class="elem2">
+                <h1>Sport - Fasion - <span>Technology</span> -</h1>
+                <h1>Science - <span>partners</span> - Travel -</h1>
 
+            </div>
         </div>
+
+        
+        <div id="footer" data-scroll data-scroll-speed="-2.5">
+            <div id="footer-text">
+                <h1>Let's Create</h1>
+                <!-- <h2>Let's Create</h1> -->
+
+            </div>
+            <div class="underline"></div>
+            <div id="footer-div">
+                <div class="box">
+                    <h6>Socials</h6>
+                    <h5>Dribbble</h5>
+                    <h5>Behance</h5>
+                    <h5>Instagram</h5>
+                    <h5>Facebook</h5>
+                    <h5>Twitter</h5>
+                    <h5>YouTube</h5>
+                </div>
+                <div class="box">
+                    <h6>Address</h6>
+                    <h5>Pushkinska 5
+                        61057 Kharkiv
+                        Ukraine</h5>
+
+                </div>
+                <div class="box">
+                    <h6>Say Hi!</h6>
+                    <h5>info@obys.agency</h5>
+                </div>
+            </div>
+            <div class="underline"></div>
+            <h5>Obys Agency © 2023</h5>
+        </div>
+    </div>
+
 
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 

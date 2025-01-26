@@ -1,3 +1,39 @@
+function locomotiveAnimation(){
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+  
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("main"),
+    smooth: true
+  });
+  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+  locoScroll.on("scroll", ScrollTrigger.update);
+  
+  // tell ScrollTrigger to use these proxy methods for the "main" element since Locomotive Scroll is hijacking things
+  ScrollTrigger.scrollerProxy("main", {
+    scrollTop(value) {
+      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+    getBoundingClientRect() {
+      return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+    },
+    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+    pinType: document.querySelector("main").style.transform ? "transform" : "fixed"
+  });
+
+  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+// after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+ScrollTrigger.refresh();
+
+
+}
+locomotiveAnimation()
+
+
+
 let circle = document.querySelector(".circle");
 let frames = document.querySelectorAll(".frame");
 let menu=document.querySelector(".nav-part");
@@ -8,10 +44,15 @@ function zoomeffect() {
       var dims = frame.getBoundingClientRect();
       var Xstart = dims.x;
       var Xend = dims.x + dims.width;
-      var zeroone = gsap.utils.mapRange(Xstart, Xend, 0, 1, dets.clientX);
+      var  Ystart=dims.y;
+      var Yend=dims.y+dims.height;
+
+      var zerooneX = gsap.utils.mapRange(Xstart, Xend, 0, 1, dets.clientX);
+      var zerooneY=gsap.utils.mapRange(Ystart,Yend,0,1,dets.clientY);
 
       gsap.to(frame.children, {
-        x: lerp(-20, 20, zeroone),
+        x: lerp(-20, 20, zerooneX),
+        y:lerp(-20, 20, zerooneY),
         duration: 0.3,
       });
 
@@ -20,6 +61,13 @@ function zoomeffect() {
         duration: 0.5, // Optional: Smooth animation
         ease: "power1.out", // Optional: Add easing
       });
+
+      gsap.to(frame.children, {
+        fontSize: "2vw", 
+        duration:.4,
+        ease:"power3.out"
+      });
+      
     });
   });
 
@@ -33,7 +81,11 @@ function zoomeffect() {
 
       gsap.to(frame.children, {
         x: 0,
+        y:0,
         duration: 0.3,
+      });
+      gsap.to(frame.children, {
+        fontSize: "1vw", 
       });
     });
   });
@@ -96,7 +148,7 @@ function loaderAnimation() {
     },
   });
   tl.to(" .line h2", {
-    AnimationName: "anime",
+    AnimationName: "loaderanime",
     opacity: 1,
     ease: "power3.out",
   });
@@ -116,6 +168,14 @@ function loaderAnimation() {
     y: 1000,
     ease: "power3.out",
   });
+  tl.from(" #page1 .navbar",{
+    opacity:0,
+    duration:.5
+  })
+  tl.from(".hero h1,.hero h2",{
+    y:120,
+    duration:.5
+  })
 }
 loaderAnimation();
 document.body.classList.add("no-scroll");
@@ -129,5 +189,65 @@ function cursorAnimation() {
       ease: "expo",
     });
   });
+
+  let videoContainer=document.querySelector(".videoContainer");
+  let playBtn=document.querySelector(".videoPlay")
+  
+  videoContainer.addEventListener("mouseenter", function () {
+    videoContainer.addEventListener("mousemove", function(dets){
+      gsap.to(".circle",{
+        opacity:0
+      })
+    gsap.to(playBtn,{
+      left: dets.x - 520,
+      y: dets.y - 200,
+  
+    })
+    })
+
+    var flag = 0
+    var video = document.querySelector("video")
+    var img =document.querySelector(".videoContainer img")
+    videoContainer.addEventListener("click", function () {
+      if (flag == 0) {
+        img.style.opacity =0;
+        video.play()
+        video.style.opacity = 1
+        playBtn.innerHTML= `<i class="fa-solid fa-pause"></i>`
+        gsap.to(playBtn, {
+          scale: 0.5
+        })
+        flag = 1
+      } else {
+        video.pause()
+        video.style.opacity = 0
+        img.style.opacity =1;
+      playBtn.innerHTML= `<i class="fa-solid fa-play"></i>`
+        gsap.to(playBtn, {
+          scale: 1
+        })
+        flag = 0
+      }
+    })
+  
+  })
+
+
+  videoContainer.addEventListener("mouseleave", function (dets) {
+    gsap.to(".circle",{
+      opacity:1
+    })
+    gsap.to(playBtn,{
+      left: "70%",
+      top:"-10%"
+  
+    })
+ 
+  })
+
+
 }
 cursorAnimation();
+
+
+
