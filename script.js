@@ -248,6 +248,22 @@ function cursorAnimation() {
 
 }
 cursorAnimation();
+var tl =gsap.timeline();
+
+tl.to("#page3 .img-div",{
+  width: "100%",
+  height: "100%",
+  scrollTrigger:{
+    trigger:"#page3",
+    scroller:"main",
+    markers:true,
+    start:"top 0%",
+    end:"top -100%",
+    scrub:2,
+    pin:true
+  },
+});
+
 
 
 
