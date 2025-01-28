@@ -256,13 +256,14 @@ tl.to("#page3 .img-div",{
   scrollTrigger:{
     trigger:"#page3",
     scroller:"main",
-    markers:true,
     start:"top 0%",
     end:"top -100%",
     scrub:2,
     pin:true
   },
 });
+
+
 
 
 

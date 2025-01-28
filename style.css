@@ -174,7 +174,7 @@ h2 {
 }
 #page2 {
   height: 70vh;
-  border: 2px solid red;
+
   width: 100%;
   background-color: #151515;
   position: relative;
@@ -185,7 +185,6 @@ h2 {
     height: 100%;
     position: relative;
     left:40%;
-    border: 2px solid white;
  
 }
 .videoContainer img {
@@ -483,6 +482,9 @@ h2 {
 html,body{
   width: 100%;
 }
+.circle{
+  display:none;
+}
   #loader {
       height: 100%;
       width: 100%;
@@ -504,6 +506,9 @@ html,body{
     gap: 3vw;
             flex-direction: column;
 }
+ .line h1 ,h2{
+ font-size: 8vw;
+}
 
 #line1-part1 {
  
@@ -515,6 +520,7 @@ html,body{
   gap: 1vw;
 
 }
+
 .navbar {
   width: 100%;
   height: 10vh;
@@ -552,7 +558,8 @@ gap: 5vw;
  
 }
 #page1 {
-  height: 50vh;
+  max-height: 55vh;
+ 
   width: 100%;
   background-color: #151515;
 }
@@ -575,7 +582,7 @@ h2 {
 }
 
 #page2 {
-  height: 28vh;
+  height: 35vh;
   width: 100%;
 
   background-color: #151515;
@@ -624,7 +631,7 @@ h2 {
   position: relative;
   width: 100%;
   /* background-color: rgb(61, 61, 61); */
-  padding: 10vh 5vw;
+  padding: 5vh 5vw;
 }
 
 #page4-content {
@@ -720,7 +727,8 @@ h2 {
   margin: 26vw 0 7vw 0;
 }
 #page5 {
-  min-height: 20vh;
+  min-height: 30vh;
+  margin-bottom: 10px;
   width: 100%;
   position: relative;
  
@@ -734,9 +742,9 @@ h2 {
   height: 108vh;
   width: 100%;
   /* background-color: red; */
-  margin-top: 20vw;
+  margin-top: -110vh;
   position: relative;
-  padding: 5vw 5vw;
+  padding: 0  5vw;
   padding-bottom: 5vw;
 }
 
@@ -784,11 +792,10 @@ h2 {
   height: 1px;
   width: 100%;
   background-color: #fff;
-  margin: 8vw 0;
+  margin: 7vw 0;
 }
 
 #footer-div {
- 
   display: flex;
   
           align-items: flex-start;
@@ -824,7 +831,45 @@ h2 {
   margin-bottom: 4vw;
   font-size: 3vw;
 }
+.pin-spacer{
+  display: none;
+}
 
+
+#page3{
+  height: 60vh;
+  width: 100%;
+  background-color: #151515;
+  display: flex;
+ align-items: center;
+  justify-content: center;
+  position: relative;
+
+
+}
+
+.img-div{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-image: url("../image/jony-y-nOmLeouETaY-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+
+}
+.img-div h1{
+  text-transform: uppercase;
+  opacity: 1;
+  scale:1;
+  color: rgba(255, 255, 255, 0.677);
+  font-size:4vw;
+  font-weight:500;
+  font-family: "silk serif";
+}
 
 
 
